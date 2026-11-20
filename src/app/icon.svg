@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#1e3730"/>
+  <g fill="none" stroke="#c5a878" stroke-width="2.5"><path d="M50 11C37 18 25 21 16 22v32c0 17 15 31 34 43 19-12 34-26 34-43V22C72 20 61 17 50 11Z"/></g>
+  <g fill="#c5a878" font-family="Georgia,serif"><text x="26" y="64" font-size="53">F</text><text x="45" y="80" font-size="53" stroke="#1e3730" stroke-width="1" paint-order="stroke">S</text></g>
+</svg>
