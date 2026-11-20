@@ -37,6 +37,7 @@ export default function LandingPage() {
   const theme = useSyncExternalStore(subscribe, () => getPreference("fsachs-theme", "light"), () => "light");
   const language: Language = savedLanguage === "en" ? "en" : "pt";
   const t = content[language];
+  const logoLanguage = language === "pt" ? "portuguese" : "english";
   const dark = theme === "dark";
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -170,8 +171,33 @@ export default function LandingPage() {
       </main>
 
       <footer className="site-footer">
-        <div className="container footer-main"><div className="footer-brand"><Monogram className="footer-monogram" /><div><span className="footer-name">Fabiano Sachs</span><p>{t.footerDescriptor}</p></div></div><p className="footer-registration">Fabiano Ferreira Sachs<span>OAB/RS 72.699</span></p><button type="button" className="back-top" onClick={() => scrollTo("conteudo")}><span>{t.backTop}</span><Icon name="chevron" /></button></div>
-        <div className="container footer-bottom"><p>© 2026 Fabiano Ferreira Sachs. {t.rights}</p><p>{t.since}</p></div>
+        <div className="container footer-main">
+          <div className="footer-brand">
+            <Image
+              src={`/images/logo_light_${logoLanguage}.png`}
+              alt={`Fabiano Sachs — ${t.footerDescriptor}. ${t.since}.`}
+              width={2172}
+              height={724}
+              className="footer-logo footer-logo-light"
+              unoptimized
+            />
+            <Image
+              src={`/images/logo_dark_${logoLanguage}.png`}
+              alt={`Fabiano Sachs — ${t.footerDescriptor}. ${t.since}.`}
+              width={2172}
+              height={724}
+              className="footer-logo footer-logo-dark"
+              unoptimized
+            />
+          </div>
+          <p className="footer-registration">Fabiano Ferreira Sachs<span>OAB/RS 72.699</span></p>
+          <button type="button" className="back-top" onClick={() => scrollTo("conteudo")}><span>{t.backTop}</span><Icon name="chevron" /></button>
+        </div>
+        <div className="container footer-bottom">
+          <p>© 2026 Fabiano Ferreira Sachs. {t.rights}</p>
+          <p className="footer-credit">{t.developedBy} <a href="https://douglasmenezes.dev.br" target="_blank" rel="noopener noreferrer">Douglas Menezes</a></p>
+          <p>{t.since}</p>
+        </div>
       </footer>
     </>
   );

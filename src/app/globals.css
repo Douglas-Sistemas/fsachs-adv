@@ -161,16 +161,19 @@ em { font-weight: 500; }
 
 .site-footer { border-top: 1px solid var(--line); background: var(--surface); }
 .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-block: 39px; }
-.footer-brand { display: flex; align-items: center; gap: 13px; }
-.footer-monogram { width: 35px; height: 44px; color: var(--gold); --monogram-cutout: var(--surface); }
-.footer-name { display: block; font-family: var(--font-cormorant), Georgia, serif; font-size: 1.75rem; line-height: 1.15; letter-spacing: -.035em; }
-.footer-brand p { margin-top: 5px; color: var(--muted); font-size: .75rem; line-height: 1.6; }
+.footer-brand { flex: 0 1 420px; width: 420px; max-width: 100%; min-width: 0; }
+.footer-logo { display: block; width: 100%; height: auto; }
+.footer-logo-dark { display: none; }
+:root[data-theme="dark"] .footer-logo-light { display: none; }
+:root[data-theme="dark"] .footer-logo-dark { display: block; }
 .footer-registration { display: grid; gap: 4px; color: var(--muted); font-size: .8125rem; line-height: 1.6; }
 .footer-registration span { font-size: .75rem; letter-spacing: .04em; }
 .back-top { display: flex; align-items: center; gap: 14px; padding: 10px 0 10px 10px; border: 0; background: none; color: var(--muted); font-size: .875rem; }
 .back-top svg { width: 19px; height: 19px; color: var(--gold); }
 .back-top:hover { color: var(--gold); }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; line-height: 1.8; }
+.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; padding-block: 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; line-height: 1.8; }
+.footer-credit a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.footer-credit a:hover { text-decoration-thickness: 2px; }
 .footer-bottom > p:last-child { font-size: .75rem; letter-spacing: .12em; }
 
 @media (min-width: 1450px) {
@@ -230,7 +233,6 @@ em { font-weight: 500; }
   .contact-icon { width: 44px; height: 48px; }
   .contact-value { font-size: 1rem; }
   .footer-main { gap: 22px; }
-  .footer-brand p { max-width: 225px; }
   .footer-registration { display: none; }
 }
 
@@ -285,11 +287,9 @@ em { font-weight: 500; }
   .contact-item { gap: 19px; padding-bottom: 23px; }
   .contact-icon { width: 50px; height: 54px; }
   .contact-value { font-size: 1.25rem; }
-  .footer-main { padding-block: 30px; gap: 20px; }
-  .footer-name { font-size: 1.6rem; }
-  .footer-brand p { max-width: 215px; }
-  .footer-monogram { width: 30px; height: 38px; }
-  .back-top { gap: 6px; font-size: .8125rem; white-space: nowrap; }
+  .footer-main { flex-wrap: wrap; padding-block: 30px; gap: 20px; }
+  .footer-brand { flex-basis: 100%; }
+  .back-top { gap: 6px; margin-left: auto; font-size: .8125rem; white-space: nowrap; }
   .footer-bottom { align-items: flex-start; padding-block: 18px; }
   .footer-bottom > p:first-child { max-width: 260px; }
   .footer-bottom > p:last-child { white-space: nowrap; }
@@ -327,7 +327,6 @@ em { font-weight: 500; }
   .phone-number { font-size: 1.2rem; }
   .footer-main { flex-wrap: wrap; gap: 22px; }
   .back-top { padding: 0; }
-  .footer-brand p { max-width: none; }
   .footer-bottom { display: grid; gap: 7px; }
   .footer-bottom > p:first-child { max-width: none; }
 }
@@ -346,4 +345,6 @@ em { font-weight: 500; }
   .about { print-color-adjust: exact; }
   .practice-card, .contact-item, .qualification { break-inside: avoid; }
   .site-footer { margin-top: 20px; }
+  .footer-logo-light { display: block !important; }
+  .footer-logo-dark { display: none !important; }
 }

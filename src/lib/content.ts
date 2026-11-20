@@ -63,6 +63,7 @@ export const content = {
     emailLabel: "E-MAIL",
     footerDescriptor: "Consultoria jurídica e contencioso cível",
     rights: "Todos os direitos reservados.",
+    developedBy: "Desenvolvido por",
     backTop: "Voltar ao topo",
   },
   en: {
@@ -127,6 +128,7 @@ export const content = {
     emailLabel: "EMAIL",
     footerDescriptor: "Legal consulting & civil litigation",
     rights: "All rights reserved.",
+    developedBy: "Developed by",
     backTop: "Back to top",
   },
 } as const;
