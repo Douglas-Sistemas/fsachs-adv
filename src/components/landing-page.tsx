@@ -70,8 +70,8 @@ export default function LandingPage() {
   }
 
   const navigation = <>
-    <button type="button" onClick={() => scrollTo("sobre")}>{t.aboutNav}</button>
     <button type="button" onClick={() => scrollTo("atuacao")}>{t.practicesNav}</button>
+    <button type="button" onClick={() => scrollTo("sobre")}>{t.aboutNav}</button>
     <button type="button" onClick={() => scrollTo("contato")}>{t.contactNav}</button>
   </>;
 
